@@ -17,7 +17,6 @@ Read more @ http://bit.ly/2AStvhK
 ### Prerequisites
 
 * This assumes that you have [npm](https://npmjs.org/) installed.
-* You’ll need to have Node >= 6 on your machine.
 
 ### Let's get started,
 
@@ -61,13 +60,14 @@ Read more @ http://bit.ly/2AStvhK
 │     └── /web/                     # Compiled web assets
 ├── /test/                          # Contains unit tests for java play sources
 ├── /ui/                            # React front end sources
-│     ├── /public/                  #
+│     ├── /public/                  # Contains the index.html file
 │     ├── /node_modules/            # 3rd-party frontend libraries and utilities
 │     ├── /src/                     # The frontend source code (modules, componensts, models, directives, services etc.) of the application
+│     ├── .editorconfig             # Define and maintain consistent coding styles between different editors and IDEs
 │     ├── .gitignore                # Contains ui files to be ignored when pushing to git
 │     ├── package.json              # Holds various metadata configuration relevant to the ui
 │     ├── README.md                 # Contains all user guide details for the ui
-│     └── yarn.lock                 #
+│     └── yarn.lock                 # Yarn lock file
 ├── .gitignore                      # Contains files to be ignored when pushing to git
 ├── build.sbt                       # Play application build script
 ├── LICENSE                         # Contains License Agreement file
