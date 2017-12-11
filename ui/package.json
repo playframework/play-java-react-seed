@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "react-scripts start",
-    "build": "rimraf ../public && react-scripts build && cp -R build ../public && rimraf build",
+    "build": "rimraf ../public && react-scripts build && ncp build ../public && rimraf build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
@@ -16,6 +16,7 @@
   },
   "devDependencies": {
     "copyfiles": "^1.2.0",
+    "ncp": "^2.0.0",
     "rimraf": "^2.6.2"
   }
 }
