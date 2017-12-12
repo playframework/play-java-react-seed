@@ -124,7 +124,7 @@ Read more @ http://bit.ly/2AStvhK
 GET        /             controllers.Assets.at(path="/public/ui", file="index.html")
 ```
 
-**Note: _On production build all the front end React build artifacts will be copied to the `public/ui` folder._**
+**Note: _On production build all the front end React build artifacts will be copied to the `public` folder._**
 
 ## Contributors
 
