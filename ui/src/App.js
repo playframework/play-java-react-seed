@@ -1,18 +1,41 @@
-import React, { Component } from 'react';
-import logo from './images/react.svg';
+import React, {Component} from 'react';
+
+import reactLogo from './images/react.svg';
+import playLogo from './images/play.svg';
+import javaLogo from './images/java.webp';
+
 import './App.css';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {title: ''};
+  }
+
+  async componentDidMount() {
+    const response = await fetch('/summary');
+    const resContent = await response.json();
+
+    this.setState({
+      title: resContent.content
+    });
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <h1>Welcome to {this.state.title}!</h1>
+        <nav>
+          <a>
+            <img width="400" height="400" src={javaLogo}/>
+          </a>
+          <a>
+            <img width="400" height="400" src={playLogo}/>
+          </a>
+          <a>
+            <img width="400" height="400" src={reactLogo} className="App-logo" alt="logo"/>
+          </a>
+        </nav>
       </div>
     );
   }
