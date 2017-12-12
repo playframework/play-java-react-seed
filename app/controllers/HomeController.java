@@ -23,7 +23,7 @@ class AppSummary {
 public class HomeController extends Controller {
 
     public Result appSummary() {
-        JsonNode jsonNode = Json.toJson(new AppSummary("Java Play Angular Seed"));
+        JsonNode jsonNode = Json.toJson(new AppSummary("Java Play React Seed"));
         return ok(jsonNode).as("application/json");
     }
 }
