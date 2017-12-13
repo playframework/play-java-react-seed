@@ -5,7 +5,6 @@
 object FrontendCommands {
   val dependencyInstall: String = "npm install"
   val test: String = "npm run test"
-  val devServe: String = "npm run start"
-  val devBuild: String = "npm run build"
-  val prodBuild: String = "npm run build"
+  val serve: String = "npm run start"
+  val build: String = "npm run build"
 }

@@ -19,7 +19,7 @@ val isWindows = System.getProperty("os.name").toLowerCase().contains("win")
 
 // Execute on commandline, depending on the operating system. Used to execute npm commands.
 def runOnCommandline(script: String)(implicit dir: File): Int = {
-  if(isWindows){ Process("cmd /c " + script, dir) } else { Process(script, dir) } }!
+  if(isWindows){ Process("cmd /c set CI=true&&" + script, dir) } else { Process("CI=true " + script, dir) } }!
 
 // Check of node_modules directory exist in given directory.
 def isNodeModulesInstalled(implicit dir: File): Boolean = (dir / "node_modules").exists()
@@ -33,24 +33,14 @@ def ifNodeModulesInstalled(task: => Int)(implicit dir: File): Int =
   if (runNpmInstall == Success) task
   else Error
 
-// Execute frontend dev build task. Update to change the frontend dev build task.
-def executeDevBuild(implicit dir: File): Int = ifNodeModulesInstalled(runOnCommandline(FrontendCommands.devBuild))
-
 // Execute frontend test task. Update to change the frontend test task.
 def executeUiTests(implicit dir: File): Int = ifNodeModulesInstalled(runOnCommandline(FrontendCommands.test))
 
 // Execute frontend prod build task. Update to change the frontend prod build task.
-def executeProdBuild(implicit dir: File): Int = ifNodeModulesInstalled(runOnCommandline(FrontendCommands.prodBuild))
+def executeProdBuild(implicit dir: File): Int = ifNodeModulesInstalled(runOnCommandline(FrontendCommands.build))
 
 
 // Create frontend build tasks for prod, dev and test execution.
-
-lazy val `ui-dev-build` = TaskKey[Unit]("Run UI build when developing the application.")
-
-`ui-dev-build` := {
-  implicit val userInterfaceRoot = baseDirectory.value / "ui"
-  if (executeDevBuild != Success) throw new Exception("Oops! UI Build crashed.")
-}
 
 lazy val `ui-test` = TaskKey[Unit]("Run UI tests when testing application.")
 
