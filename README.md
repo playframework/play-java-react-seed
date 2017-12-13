@@ -121,7 +121,13 @@ Read more @ http://bit.ly/2AStvhK
 * The following route configuration allows to map front end index.html to index route. This should be placed as the first route in this file.
 
 ```
-GET        /             controllers.Assets.at(path="/public/ui", file="index.html")
+GET        /             controllers.Assets.at(path="/public", file="index.html")
+```
+
+* THe following asset route is being used to serve all the build artifacts (css, js) and static files (images, etc.). This should be placed as the last route in route config file.
+
+```
+GET        /*file        controllers.Assets.at(path="/public", file)
 ```
 
 **Note: _On production build all the front end React build artifacts will be copied to the `public` folder._**
