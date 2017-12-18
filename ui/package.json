@@ -15,6 +15,8 @@
     "react-scripts": "1.0.17"
   },
   "devDependencies": {
+    "enzyme": "^3.2.0",
+    "enzyme-adapter-react-16": "^1.1.0",
     "ncp": "^2.0.0",
     "react-router-dom": "^4.2.2",
     "rimraf": "^2.6.2"
