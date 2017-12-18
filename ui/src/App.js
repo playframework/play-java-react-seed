@@ -4,6 +4,7 @@ import { HashRouter, Route, Link } from 'react-router-dom';
 import reactLogo from './images/react.svg';
 import playLogo from './images/play.svg';
 import javaLogo from './images/java.webp';
+import Client from "./Client";
 
 import './App.css';
 
@@ -19,11 +20,10 @@ class App extends Component {
   }
 
   async componentDidMount() {
-    const response = await fetch('/summary');
-    const resContent = await response.json();
-
-    this.setState({
-      title: resContent.content
+    Client.getSummary(summary => {
+      this.setState({
+        title: summary.content
+      });
     });
   }
 
