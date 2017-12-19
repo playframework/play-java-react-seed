@@ -1,4 +1,4 @@
-name := """java-play-react"""
+name := """java-play-react-seed"""
 
 version := "1.0-SNAPSHOT"
 
