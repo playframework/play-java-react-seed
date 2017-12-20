@@ -50,11 +50,10 @@ Read more @ http://bit.ly/2AStvhK
 │     └── application.log           # Default log file
 ├── /project/                       # Sbt configuration files
 │     ├── FrontendCommands.scala    # Frontend build commands
-│     ├── FrontendRunHook.scala     # Frontend build play run hook
+│     ├── FrontendRunHook.scala     # Forntend build PlayRunHook (trigger frontend serve on sbt run)
 │     ├── build.properties          # Marker for sbt project
 │     └── plugins.sbt               # Sbt plugins declaration
-├── /public/                        # Public assets
-│     └── /ui/                      # Frontend build assests
+├── /public/                        # Frontend build artifacts will be copied to this directory
 ├── /target/                        # Generated stuff
 │     ├── /universal/               # Application packaging
 │     └── /web/                     # Compiled web assets
@@ -72,7 +71,7 @@ Read more @ http://bit.ly/2AStvhK
 ├── build.sbt                       # Play application build script
 ├── LICENSE                         # Contains License Agreement file
 ├── README.md                       # Contains all user guide details for the application
-└── ui-build.sbt                    # UI build scripts
+└── ui-build.sbt                    # Associated frontend build scripts with sbt
 ```
 
 ## What is new in here?
