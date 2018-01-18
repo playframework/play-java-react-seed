@@ -131,6 +131,19 @@ GET        /*file        controllers.Assets.at(path="/public", file)
 
 **Note: _On production build all the front end React build artifacts will be copied to the `public` folder._**
 
+## Can be used to implement any front end/ui build!
+
+* Simply replace the ui directory with the build of your choice
+* Make output directory ROOT/public/
+* Implement a proxy to localhost:9000
+
+## Looking for some other frontend framework or language choice
+
+* [Scala Play React Seed](https://github.com/yohangz/scala-play-react-seed)
+* [Scala Play Angular Seed](https://github.com/yohangz/scala-play-angular-seed)
+* [Java Play Angular Seed](https://github.com/yohangz/java-play-angular-seed)
+* [Scala Play Vuejs Seed](https://github.com/duncannevin/scala-play-vue-seed) by [Duncan Nevin](https://github.com/duncannevin)
+
 ## Contributors
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
