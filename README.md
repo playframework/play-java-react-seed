@@ -143,6 +143,7 @@ GET        /*file        controllers.Assets.at(path="/public", file)
 * [Scala Play Angular Seed](https://github.com/yohangz/scala-play-angular-seed)
 * [Java Play Angular Seed](https://github.com/yohangz/java-play-angular-seed)
 * [Scala Play Vuejs Seed](https://github.com/duncannevin/scala-play-vue-seed) by [Duncan Nevin](https://github.com/duncannevin)
+* [Java Play Vuejs Seed](https://github.com/duncannevin/java-play-vue-seed) by [Duncan Nevin](https://github.com/duncannevin)
 
 ## Contributors
 
