@@ -2,11 +2,11 @@
 # This file defines all application routes (Higher priority routes first)
 # ~~~~
 
-# Load index page
-GET        /             controllers.Assets.at(path="/public", file="index.html")
+# Load Angular index page
+GET     /                           controllers.FrontendController.index()
 
 # An example route
-GET        /summary      controllers.HomeController.appSummary()
+GET     /summary                    controllers.HomeController.appSummary
 
-# Map static resources from the /public folder to the file resource paths
-GET        /*file        controllers.Assets.at(path="/public", file)
+# Map static resources from the /public folder to the file rosource path
+GET     /*file                      controllers.FrontendController.assetOrDefault(file)
