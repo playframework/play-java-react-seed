@@ -8,7 +8,7 @@ Read more @ http://bit.ly/2A1AzEq
 
 [![Java Play React Seed](https://github.com/yohangz/java-play-react-seed/blob/master/react.png)](http://bit.ly/2A1AzEq)
 
-## Used Versions
+## Used Summary
 
 * [Play Framework: 2.6.7](https://www.playframework.com/documentation/2.6.x/Home)
 * [React: 16.2.0](https://reactjs.org/)
