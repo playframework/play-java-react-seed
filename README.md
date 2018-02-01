@@ -114,7 +114,7 @@ Read more @ http://bit.ly/2A1AzEq
 
 * This file contains the build task hooks to trigger frontend npm scripts on sbt command execution.
 
-### npm run commands
+### npm scripts
 
 * New and modified npm scripts of [Create React App](https://github.com/facebookincubator/create-react-app) generated package.json.
 * Check [UI README.md](./ui/README.md) to see all available frontend build tasks.
