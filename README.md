@@ -10,7 +10,7 @@ Read more @ http://bit.ly/2A1AzEq
 
 ## Used Summary
 
-* [Play Framework: 2.6.7](https://www.playframework.com/documentation/2.6.x/Home)
+* [Play Framework: 2.6.13](https://www.playframework.com/documentation/2.6.x/Home)
 * [React: 16.2.0](https://reactjs.org/)
 * [Create React App: 1.0.17](https://github.com/facebookincubator/create-react-app)
 
