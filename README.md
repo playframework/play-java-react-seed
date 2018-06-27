@@ -6,7 +6,7 @@
 
 Read more @ http://bit.ly/2A1AzEq
 
-[![Java Play React Seed](https://github.com/yohangz/java-play-react-seed/blob/master/react.png)](http://bit.ly/2A1AzEq)
+[![Java Play React Seed](https://github.com/yohangz/java-play-react-seed/blob/master/react.png)](http://bit.ly/2A1AzEq) [![Greenkeeper badge](https://badges.greenkeeper.io/yohangz/java-play-react-seed.svg)](https://greenkeeper.io/)
 
 ## Used Summary
 
