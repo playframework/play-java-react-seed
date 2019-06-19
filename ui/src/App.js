@@ -12,7 +12,7 @@ import Client from "./Client";
 
 import './App.css';
 
-const Tech = ({ match }) => {
+const Tech = ({match}) => {
   return <div>Current Route: {match.params.tech}</div>
 };
 
@@ -35,19 +35,19 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <h1>Welcome to {this.state.title}!</h1>
+          <h1>Welcome to {this.state.title}</h1>
           <nav>
-            <Link to="java" >
-              <img width="400" height="400" src={javaLogo} alt="Java Logo" />
+            <Link to="java">
+              <img width="400" height="400" src={javaLogo} alt="Java Logo"/>
             </Link>
-            <Link to="play" >
-              <img width="400" height="400" src={playLogo} alt="Play Framework Logo" />
+            <Link to="play">
+              <img width="400" height="400" src={playLogo} alt="Play Framework Logo"/>
             </Link>
-            <Link to="react" >
-              <img width="400" height="400" src={reactLogo} className="App-logo" alt="React Logo"/>
+            <Link to="react">
+              <img width="400" height="400" src={reactLogo} alt="React Logo"/>
             </Link>
           </nav>
-          <Route path="/:tech" component={Tech} />
+          <Route path="/:tech" component={Tech}/>
           <div>
             <h2>Check out the project on GitHub for more information</h2>
             <h3>

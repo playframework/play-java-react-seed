@@ -24,7 +24,7 @@ public class HomeControllerTest extends WithApplication {
         Result result = new HomeController().appSummary();
         assertEquals(OK, result.status());
         assertEquals("application/json", result.contentType().get());
-        assertEquals(contentAsString(result), "{\"content\":\"Java Play React Seed\"}");
+        assertEquals(contentAsString(result), "{\"content\":\"Java Play React Seed!\"}");
     }
 
     @Test
@@ -36,6 +36,6 @@ public class HomeControllerTest extends WithApplication {
         Result result = route(app, request);
         assertEquals(OK, result.status());
         assertEquals("application/json", result.contentType().get());
-        assertEquals(contentAsString(result), "{\"content\":\"Java Play React Seed\"}");
+        assertEquals(contentAsString(result), "{\"content\":\"Java Play React Seed!\"}");
     }
 }
