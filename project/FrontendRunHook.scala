@@ -11,18 +11,23 @@ object FrontendRunHook {
   def apply(base: File): PlayRunHook = {
     object UIBuildHook extends PlayRunHook {
 
-      var process: Option[Process] = None
+      def makeProcessString(cmd: String): String = {
+        // Windows requires npm commands prefixed with cmd /c
+        if (System.getProperty("os.name").toLowerCase().contains("win")) {
+          s"cmd /c $cmd"
+        } else {
+          cmd
+        }
+      }
+
+      val frontend: File = base / "ui"
 
       /**
-        * Change these commands if you want to use Yarn.
-        */
-      var install: String = FrontendCommands.dependencyInstall
-      var run: String = FrontendCommands.serve
-
-      // Windows requires npm commands prefixed with cmd /c
-      if (System.getProperty("os.name").toLowerCase().contains("win")){
-        install = "cmd /c" + install
-        run = "cmd /c" + run
+       * Runs the given shell command in the frontend dir, blocks until it is done, and returns the return code.
+       */
+      def runAndWait(cmd: String): Int = {
+        val fullCmd = makeProcessString(cmd)
+        Process(fullCmd, frontend).!
       }
 
       /**
@@ -30,7 +35,10 @@ object FrontendRunHook {
         * Run npm install if node modules are not installed.
         */
       override def beforeStarted(): Unit = {
-        if (!(base / "ui" / "node_modules").exists()) Process(install, base / "ui").!
+        if (!(base / "ui" / "node_modules").exists()) {
+          println(s"Installing npm dependencies")
+          runAndWait(FrontendCommands.dependencyInstall)
+        }
       }
 
       /**
@@ -38,9 +46,8 @@ object FrontendRunHook {
         * Run npm start
         */
       override def afterStarted(): Unit = {
-        process = Option(
-          Process(run, base / "ui").run
-        )
+        println(s"Booting frontend")
+        Process(makeProcessString(FrontendCommands.serve), frontend).run
       }
 
       /**
@@ -48,10 +55,9 @@ object FrontendRunHook {
         * Cleanup frontend execution processes.
         */
       override def afterStopped(): Unit = {
-        process.foreach(_.destroy())
-        process = None
+        println(s"Shutting down frontend")
+        runAndWait("npx kill-port 3000")
       }
-
     }
 
     UIBuildHook
